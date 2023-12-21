@@ -1,46 +1,98 @@
 .card_wrapper {
-  top: 0;
-  left: 0;
-  height: 100vh;
-  padding: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, max-content));
+  place-content: center;
+  gap: 1rem;
+  margin: 10rem auto;
+}
+.card_category_container {
+  margin-top: 5rem;
+  padding: 0 15px;
+}
+
+.card_select_category {
+  width: 350px;
+  border: 2px solid #002;
+  border-radius: 10px;
+  padding: 0.6rem;
+}
+
+.card_select_category > summary {
+  margin-bottom: 0.5em;
+  padding: 10px;
+  font: 500 18px Arial, Helvetica, sans-serif;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.card_select_category[open],
+.card_select_category[open] > summary {
+  border-bottom: 1px solid #aaa;
+  color: #3c918a;
+  border-color: #3c918a;
+}
+
+.card_select_category > p {
+  cursor: pointer;
+  padding: 6px 10px;
+  font: 400 16px Verdana, Geneva, Tahoma, sans-serif;
+  /* transition: all 0.2s linear; */
+}
+
+.card_select_category p.active {
+  background: #3c918a;
+  border-radius: 5px;
+  color: #fff;
 }
 
 .card_design_container {
-  margin-right: auto;
-  padding: 10px;
+  padding: 0 10px;
+  height: max-content;
+  margin-top: 45px;
 }
 
 .card_design_container > h3 {
-  margin: 10px 0;
+  margin-bottom: 10px;
   color: #003;
   font: 500 1.3rem Arial, Helvetica, sans-serif;
 }
 
-.select_card_desig_content {
-  width: 250px;
+.select_card_design_content {
+  width: 370px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 100px));
   justify-content: center;
   gap: 15px;
   padding: 15px;
   background: #f2f2f2;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .select_card_design {
-  height: 60px;
+  height: 55px;
   border-radius: 5px;
   border: 1px solid #aaaaaa;
   cursor: pointer;
+  position: relative;
 }
-
-.select_card_design:hover {
+.select_card_design:hover,
+.select_card_design.selected {
   opacity: 0.9;
   background: #fafafa;
+  border-color: #181818;
+}
+
+.select_card_design.selected::after {
+  content: "";
+  position: absolute;
+  opacity: 1;
+  right: -10px;
+  bottom: -10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: url("../../public/images/checkmark.svg");
 }
 
 .select_card_design img {
@@ -52,18 +104,17 @@
 }
 
 /* Visual Card */
-
+/* 
 .visual_card_content {
-  margin-right: auto;
-}
+} */
 
 .visual_card_colors {
-  margin-bottom: 1rem;
+  margin-bottom: 10px;
   border-bottom: 1px dotted #185854;
   padding: 15px 0;
 }
 .visual_card_colors p {
-  margin: 10px 0;
+  margin-bottom: 10px;
   font-size: 1.2rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 500;
@@ -77,7 +128,6 @@
   margin: 0 3px;
   border: none;
   color: #fff;
-  /* background: inherit; */
   border-radius: 5px;
   cursor: pointer;
 }
@@ -88,7 +138,6 @@
   background: linear-gradient(#479c95, #3c918a 0%, #185854);
   border-radius: 1rem;
   position: relative;
-  color: gold;
 }
 
 .gold {
@@ -104,8 +153,7 @@
   background: linear-gradient(#d477d4, #7a367a 0%, #f083f0);
 }
 .maroon {
-  background: linear-gradient(to bottom left, #9e5050, #752727 100%, #520e0e);
-  background: moc;
+  background: linear-gradient(to bottom left, #c07c7c, #752727 100%, #520e0e);
 }
 
 .card_chip {
@@ -125,17 +173,11 @@
 }
 
 .card_cover_img {
-  position: absolute;
-  left: 0;
-  top: 0;
-  border-radius: 10px;
-
-  color: gold;
+  width: 100%;
+  height: 100%;
 }
 .card_cover_img > img {
-  width: 100%;
   max-width: 100%;
-  height: 100%;
-  background: transparent;
-  border-radius: inherit;
+  max-height: 100%;
+  border-radius: 10px;
 }
