@@ -1,0 +1,141 @@
+.card_wrapper {
+  top: 0;
+  left: 0;
+  height: 100vh;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.card_design_container {
+  margin-right: auto;
+  padding: 10px;
+}
+
+.card_design_container > h3 {
+  margin: 10px 0;
+  color: #003;
+  font: 500 1.3rem Arial, Helvetica, sans-serif;
+}
+
+.select_card_desig_content {
+  width: 250px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 100px));
+  justify-content: center;
+  gap: 15px;
+  padding: 15px;
+  background: #f2f2f2;
+  border-radius: 5px;
+}
+
+.select_card_design {
+  height: 60px;
+  border-radius: 5px;
+  border: 1px solid #aaaaaa;
+  cursor: pointer;
+}
+
+.select_card_design:hover {
+  opacity: 0.9;
+  background: #fafafa;
+}
+
+.select_card_design img {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: transparent;
+}
+
+/* Visual Card */
+
+.visual_card_content {
+  margin-right: auto;
+}
+
+.visual_card_colors {
+  margin-bottom: 1rem;
+  border-bottom: 1px dotted #185854;
+  padding: 15px 0;
+}
+.visual_card_colors p {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 500;
+  color: #003;
+}
+.visual_card_colors button {
+  width: 50px;
+  height: 30px;
+  font-size: 1rem;
+  padding: 8px 10px;
+  margin: 0 3px;
+  border: none;
+  color: #fff;
+  /* background: inherit; */
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.visual_card {
+  width: 430px;
+  height: 270px;
+  background: linear-gradient(#479c95, #3c918a 0%, #185854);
+  border-radius: 1rem;
+  position: relative;
+  color: gold;
+}
+
+.gold {
+  background: linear-gradient(#ffd700, #a58d08 0%, #ecd341);
+}
+.green {
+  background: linear-gradient(to top, #088108, #093309 5%, #1e9b1e);
+}
+.blue {
+  background: linear-gradient(to top right, #6cc4e7, #204b5c 0%, #86b5c7);
+}
+.violet {
+  background: linear-gradient(#d477d4, #7a367a 0%, #f083f0);
+}
+.maroon {
+  background: linear-gradient(to bottom left, #9e5050, #752727 100%, #520e0e);
+  background: moc;
+}
+
+.card_chip {
+  position: absolute;
+  top: 30%;
+  left: 10.5%;
+  z-index: 99;
+  user-select: none;
+  pointer-events: none;
+  width: 50px;
+  height: 50px;
+}
+
+.card_chip > img {
+  width: 100%;
+  height: 100%;
+}
+
+.card_cover_img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+
+  color: gold;
+}
+.card_cover_img > img {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  background: transparent;
+  border-radius: inherit;
+}
