@@ -10,13 +10,13 @@ export const Card = () => {
   const [visualCardImage, setVisualCardImage] = useState("");
   const [cardColor, setCardColor] = useState("");
   const [selectCardCategory, setSelectCardCategory] = useState("patriot");
-  const [openDropdown, setOpenDropdown] = useState(false);
   const [cloneDesignImages, setCloneDesignImages] = useState([]);
 
   function handleSelectCardCategory(element) {
     setSelectCardCategory(element.dataset.value);
     const detailsEL = element.closest("details[class='card_select_category']");
     detailsEL.open = false;
+    setVisualCardImage("");
   }
 
   useEffect(() => {
