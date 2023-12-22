@@ -1,4 +1,4 @@
-# MetalCards Simple using React JS
+# Sample MetalCards using React JS
 
 ---
 
