@@ -10,22 +10,22 @@ export const Card = () => {
   const [visualCardImage, setVisualCardImage] = useState("");
   const [cardColor, setCardColor] = useState("");
   const [selectCardCategory, setSelectCardCategory] = useState("patriot");
+  const [cardUsername, setCardUserName] = useState("");
   const [cloneDesignImages, setCloneDesignImages] = useState([]);
 
-  function handleSelectCardCategory(element) {
+  function handleSelectCardCategory(element = element) {
     setSelectCardCategory(element.dataset.value);
     const detailsEL = element.closest("details[class='card_select_category']");
     detailsEL.open = false;
     setVisualCardImage("");
   }
-
   useEffect(() => {
     selectCardCategory === "patriot"
-      ? setCloneDesignImages(cardPatriotDesignimages)
+      ? setCloneDesignImages([...cardPatriotDesignimages])
       : selectCardCategory === "sport"
-      ? setCloneDesignImages(cardSportDesignImages)
+      ? setCloneDesignImages([...cardSportDesignImages])
       : "";
-  }, [handleSelectCardCategory]);
+  }, [selectCardCategory]);
 
   function handleSelectCardDesign(index) {
     selectCardCategory != "" && selectCardCategory === "sport"
@@ -36,10 +36,9 @@ export const Card = () => {
   function handleSelectCardColor(colorValue) {
     setCardColor(colorValue);
   }
-
   return (
     <div className="card_wrapper">
-      <div className="card_category_container">
+      <div className="card_control_container">
         <details className="card_select_category">
           <summary>Select card category:</summary>
           <p
@@ -57,6 +56,15 @@ export const Card = () => {
             Sport
           </p>
         </details>
+        <input
+          className="card_username_input"
+          type="text"
+          placeholder="CARD HOLDER"
+          value={cardUsername}
+          onChange={(e) => setCardUserName(e.target.value)}
+          spellCheck="false"
+          autoComplete="off"
+        />
       </div>
       <div className="card_design_container">
         <h3>Select card design:</h3>
@@ -99,6 +107,9 @@ export const Card = () => {
           </div>
           <div className="card_cover_img">
             {visualCardImage !== "" && <img src={visualCardImage} alt="img1" />}
+          </div>
+          <div className="card_username_text">
+            <h3>{cardUsername || "card holder"}</h3>
           </div>
         </div>
       </div>

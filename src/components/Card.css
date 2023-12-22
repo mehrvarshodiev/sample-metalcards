@@ -5,15 +5,16 @@
   gap: 1rem;
   margin: 10rem auto;
 }
-.card_category_container {
+.card_control_container {
   margin-top: 5rem;
   padding: 0 15px;
+  width: 350px;
 }
 
-.card_select_category {
-  width: 350px;
+.card_select_category,
+.card_username_input {
   border: 2px solid #002;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 0.6rem;
 }
 
@@ -37,13 +38,32 @@
   cursor: pointer;
   padding: 6px 10px;
   font: 400 16px Verdana, Geneva, Tahoma, sans-serif;
-  /* transition: all 0.2s linear; */
 }
 
 .card_select_category p.active {
   background: #3c918a;
   border-radius: 5px;
   color: #fff;
+}
+.card_username_input {
+  width: 100%;
+  margin: 2rem 0 0 0;
+  font: 400 18px "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  outline: none;
+  text-transform: uppercase;
+}
+
+.card_username_input:focus {
+  border-color: #3c918a;
+  color: #3c918a;
+  caret-color: #3c918a;
+}
+.card_username_input::placeholder {
+  color: #002;
+}
+.card_username_input:focus::placeholder {
+  border-color: #3c918a;
+  color: #3c918a;
 }
 
 .card_design_container {
@@ -138,16 +158,16 @@
 }
 
 .gold {
-  background: linear-gradient(#ffd700, #a58d08 0%, #ecd341);
+  background: linear-gradient(to left bottom, #e6ca30 20%, #e6ca30 0%, #685e23);
 }
 .green {
-  background: linear-gradient(to top, #088108, #093309 5%, #1e9b1e);
+  background: linear-gradient(to top, #166816, #093309 5%, #1e9b1e);
 }
 .blue {
   background: linear-gradient(to top right, #6cc4e7, #204b5c 0%, #86b5c7);
 }
 .violet {
-  background: linear-gradient(#d477d4, #7a367a 0%, #f083f0);
+  background: linear-gradient(to bottom right, #d477d4, #3b0b4e 100%, #e98be9);
 }
 .maroon {
   background: linear-gradient(to bottom left, #c07c7c, #752727 100%, #520e0e);
@@ -156,7 +176,7 @@
 .card_chip {
   position: absolute;
   top: 30%;
-  left: 10.5%;
+  left: 10%;
   z-index: 99;
   user-select: none;
   pointer-events: none;
@@ -177,4 +197,17 @@
   max-width: 100%;
   max-height: 100%;
   border-radius: 10px;
+}
+
+.card_username_text {
+  max-width: 100%;
+  height: 48px;
+  overflow-y: auto;
+  word-break: break-all;
+  position: absolute;
+  bottom: 8%;
+  left: 10%;
+  font: 700 1.4rem Verdana, Geneva, Tahoma, sans-serif;
+  text-transform: uppercase;
+  color: #fff;
 }
